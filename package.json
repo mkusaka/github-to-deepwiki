@@ -4,11 +4,12 @@
   "description": "Press 'Ctrl+Shift+d' to jump from github.com to deepwiki.com",
   "scripts": {
     "build": "esbuild src/background.ts --bundle --platform=browser --target=chrome100 --outfile=dist/background.js",
-    "watch": "esbuild src/background.ts --bundle --platform=browser --target=chrome100 --outfile=dist/background.js --watch"
+    "watch": "esbuild src/background.ts --bundle --platform=browser --target=chrome100 --outfile=dist/background.js --watch",
+    "package": "rm -f pacakge.zip && pnpm build && zip -r package.zip . -x '.git/**' './node_modules/**' 'yarn*' '*.ts' '.idea/**' 'tsconfig.json' 'package.json' '.gitignore'"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "mkusaka <hinoshita1992@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "@types/chrome": "^0.0.317",
     "esbuild": "^0.25.3",
