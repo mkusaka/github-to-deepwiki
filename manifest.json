@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "manifest_version": 3,
   "description": "Press 'Command+Shift+D' (Mac) or 'Ctrl+Shift+D' (Windows/Linux) to jump from github.com to deepwiki.com",
-  "permissions": ["tabs", "commands"],
+  "permissions": ["commands"],
   "host_permissions": [
     "https://github.com/*"
   ],

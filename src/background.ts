@@ -1,5 +1,4 @@
 chrome.commands.onCommand.addListener(async (command) => {
-  console.log("command", command);
   if (command !== "go-deepwiki") return;
 
   // アクティブタブを取得
