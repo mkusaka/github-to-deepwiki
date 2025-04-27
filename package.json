@@ -1,0 +1,18 @@
+{
+  "name": "github-to-deepwiki",
+  "version": "0.1.0",
+  "description": "Press 'Ctrl+Shift+d' to jump from github.com to deepwiki.com",
+  "scripts": {
+    "build": "esbuild src/background.ts --bundle --platform=browser --target=chrome100 --outfile=dist/background.js",
+    "watch": "esbuild src/background.ts --bundle --platform=browser --target=chrome100 --outfile=dist/background.js --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chrome": "^0.0.317",
+    "esbuild": "^0.25.3",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.8.3"
+  }
+}

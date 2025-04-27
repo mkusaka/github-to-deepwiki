@@ -1,0 +1,22 @@
+{
+  "name": "GitHub → DeepWiki Shortcut",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "description": "Press 'Command+Shift+D' (Mac) or 'Ctrl+Shift+D' (Windows/Linux) to jump from github.com to deepwiki.com",
+  "permissions": ["tabs", "commands"],
+  "host_permissions": [
+    "https://github.com/*"
+  ],
+  "background": {
+    "service_worker": "dist/background.js"
+  },
+  "commands": {
+    "go-deepwiki": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+D",
+        "mac": "Command+Shift+D"
+      },
+      "description": "Go to DeepWiki (same path)"
+    }
+  }
+}
