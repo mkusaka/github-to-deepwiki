@@ -1,30 +1,34 @@
 chrome.commands.onCommand.addListener(async (command) => {
   if (command !== "go-deepwiki") return;
 
-  // GitHubからDeepWikiに移動
+  // Navigate from GitHub to DeepWiki
   await navigateToDeepWiki();
 });
 
-// アイコンクリック時のイベントリスナー
+// Event listener for extension icon click
 chrome.action.onClicked.addListener(async (tab) => {
-  // GitHubからDeepWikiに移動
+  // Navigate from GitHub to DeepWiki
   await navigateToDeepWiki();
 });
 
-// GitHubからDeepWikiへ移動する共通関数
+// Common function to navigate from GitHub to DeepWiki
 async function navigateToDeepWiki() {
-  // アクティブタブを取得
+  // Get active tab
   const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
   const tab = tabs[0];
   if (!tab || !tab.url) return;
 
   try {
     const url = new URL(tab.url);
-    if (url.hostname === "github.com") {
-      url.hostname = "deepwiki.com";
-      // タブを遷移
-      await chrome.tabs.update(tab.id!, { url: url.href });
-    }
+    
+    // Only work on GitHub domains
+    if (url.hostname !== "github.com") return;
+    
+    // Replace github.com with deepwiki.com
+    url.hostname = "deepwiki.com";
+    
+    // Navigate to the new URL
+    await chrome.tabs.update(tab.id!, { url: url.href });
   } catch (e) {
     console.error("Invalid URL:", tab.url);
   }
