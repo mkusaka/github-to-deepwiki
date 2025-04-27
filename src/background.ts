@@ -1,6 +1,18 @@
 chrome.commands.onCommand.addListener(async (command) => {
   if (command !== "go-deepwiki") return;
 
+  // GitHubからDeepWikiに移動
+  await navigateToDeepWiki();
+});
+
+// アイコンクリック時のイベントリスナー
+chrome.action.onClicked.addListener(async (tab) => {
+  // GitHubからDeepWikiに移動
+  await navigateToDeepWiki();
+});
+
+// GitHubからDeepWikiへ移動する共通関数
+async function navigateToDeepWiki() {
   // アクティブタブを取得
   const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
   const tab = tabs[0];
@@ -16,4 +28,4 @@ chrome.commands.onCommand.addListener(async (command) => {
   } catch (e) {
     console.error("Invalid URL:", tab.url);
   }
-});
+}

@@ -7,6 +7,9 @@
   "host_permissions": [
     "https://github.com/*"
   ],
+  "action": {
+    "default_title": "Go to DeepWiki"
+  },
   "background": {
     "service_worker": "dist/background.js"
   },
