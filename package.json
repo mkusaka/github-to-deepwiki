@@ -1,6 +1,6 @@
 {
   "name": "github-to-deepwiki",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Press 'Ctrl+Shift+d' to jump from github.com to deepwiki.com",
   "scripts": {
     "build": "esbuild src/background.ts --bundle --platform=browser --target=chrome100 --outfile=dist/background.js",
