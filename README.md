@@ -11,7 +11,7 @@ A Chrome extension that allows you to quickly jump from GitHub to DeepWiki with 
 ## Installation
 
 ### From Chrome Web Store
-*(Coming soon)*
+https://chromewebstore.google.com/detail/github-%E2%86%92-deepwiki-shortcu/nimfeemneckkgognijblojnnlkbfdbli
 
 ### Manual Installation
 1. Clone or download this repository
