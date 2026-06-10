@@ -5,7 +5,7 @@
   "scripts": {
     "build": "esbuild src/background.ts --bundle --platform=browser --target=chrome100 --outfile=dist/background.js",
     "watch": "esbuild src/background.ts --bundle --platform=browser --target=chrome100 --outfile=dist/background.js --watch",
-    "package": "rm -f pacakge.zip && pnpm build && zip -r package.zip . -x '.git/**' './node_modules/**' 'pnpm-lock.yaml' '*.ts' '.idea/**' 'tsconfig.json' 'package.json' '.gitignore' '.github/**'"
+    "package": "rm -f package.zip && pnpm build && zip -r package.zip . -x '.git/**' './node_modules/**' 'pnpm-lock.yaml' '*.ts' '.idea/**' 'tsconfig.json' 'package.json' '.gitignore' '.github/**' '.pinact.yaml' 'renovate.json5'"
   },
   "keywords": [],
   "author": "mkusaka <hinoshita1992@gmail.com>",
